@@ -1,5 +1,6 @@
 #include "main.h"
 
+// Задание 2.1
 void task1() {
 	double x, y, func, c;
 	int p;
@@ -44,6 +45,7 @@ void task1() {
 	return;
 }
 
+// Задание 2.2
 void task2() {
 	int num;
 	char group;
@@ -69,6 +71,47 @@ void task2() {
 	return;
 }
 
+// Задание 2.3
+void task3() {
+	struct Lake {
+		char name[20];
+		int area;
+	};
+
+	int arraySize = 7;
+	Lake* lakes = new Lake[arraySize]{
+		{"Иссык-Куль", 6280},
+		{"Онежское", 9720},
+		{"Ладожское", 17700},
+		{"Балхаш", 18300},
+		{"Байкал", 31500},
+		{"Аральское море", 51000},
+		{"Каспийское море", 371000},
+	};
+
+	int area;
+
+
+	cout << "Введите площадь(кв.км): ";
+	cin >> area;
+
+	int startIndex = -1;
+	for (int i = 0; i < arraySize; i++) {
+		if (lakes[i].area >= area) {
+			startIndex = i;
+			break;
+		}
+	}
+
+
+	cout << "Площадь не менее " << area << " кв.км имеют следующие озера:\n";
+
+	for (int i = startIndex; i < arraySize; i++) {
+		cout << "\t" << lakes[i].name << " - " << lakes[i].area << endl;
+	}
+}
+
+// Меню задания 2
 void task02() {
 	short int num;
 
@@ -77,18 +120,21 @@ void task02() {
 	cout << endl;
 
 	switch (num) {
-	case 1:
-		task1();
-		break;
+		case 1:
+			task1();
+			break;
 
-	case 2:
-		task2();
-		break;
+		case 2:
+			task2();
+			break;
 
-	default:
-		cout << "Такой подзадачи нет." << endl;
-		break;
+		case 3:
+			task3();
+			break;
+
+		default:
+			cout << "Такой подзадачи нет." << endl;
+			break;
 	}
-
 	return;
 }
