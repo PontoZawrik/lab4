@@ -44,6 +44,31 @@ void task1() {
 	return;
 }
 
+void task2() {
+	int num;
+	char group;
+
+	cout << "¬ведите целое число: ";
+	cin >> num;
+
+	if (num > 100 && num < 120) {
+		group = 'A';
+	}
+	else if (num > 0 && num <= 100 && num % 5 == 0) {
+		group = 'B';
+	}
+	else if (num < 0 && num % 2 == 0) {
+		group = 'C';
+	}
+	else {
+		group = 'D';
+	}
+
+	cout << "„исло " << num << " относитс€ к группе " << group << endl;
+
+	return;
+}
+
 void task02() {
 	short int num;
 
@@ -57,6 +82,7 @@ void task02() {
 		break;
 
 	case 2:
+		task2();
 		break;
 
 	default:
